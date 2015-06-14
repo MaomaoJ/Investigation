@@ -28,7 +28,7 @@
         </activity>
          -->
          <activity
-            android:name="com.yitong.ui.SplashActivity"
+            android:name="com.investigation.ui.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,22 +37,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.yitong.ui.TmlStore_MainActivity"
+            android:name="com.investigation.ui.TmlStore_MainActivity"
             android:label="@string/app_name" >
             
         </activity>
         <activity
-            android:name="com.yitong.ui.Distributor_MainActivity"
+            android:name="com.investigation.ui.Distributor_MainActivity"
             android:label="@string/app_name" >
          
         </activity>
         <activity
-            android:name="com.yitong.ui.Brand_MainActivity"
+            android:name="com.investigation.ui.Brand_MainActivity"
             android:label="@string/app_name" >
         
         </activity>
          <activity
-            android:name="com.yitong.ui.LoginActivity"
+            android:name="com.investigation.ui.LoginActivity"
             android:label="@string/app_name" >
         
         </activity>

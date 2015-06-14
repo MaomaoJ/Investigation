@@ -43,7 +43,7 @@
                 android:src="@drawable/dis_indicate_right"
                 android:visibility="gone" />
  
-            <com.yitong.indicator.TitlePageIndicator
+            <com.investigation.indicator.TitlePageIndicator
                 android:id="@+id/above_indicator"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

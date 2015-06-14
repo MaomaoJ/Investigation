@@ -4,7 +4,7 @@
     android:layout_height="@dimen/slidingmenu_title_height"
     android:background="#161525" >
    	
-    <com.yitong.widget.CircleImageView
+    <com.investigation.widget.CircleImageView
         android:id="@+id/user_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
