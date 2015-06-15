@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <include
+        android:id="@+id/brief_introducion_title"
+        layout="@layout/above_title" />
+    <!-- 调查描述 -->
+
+    <RelativeLayout
+        android:id="@+id/brief_introducion_dec"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/title_height"
+        android:background="@color/grey" >
+
+        <TextView
+            android:id="@+id/question_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/brief_introduction_marin"
+            android:text="@string/question_total" />
+
+        <TextView
+            android:id="@+id/question_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/question_total"
+            android:layout_alignBottom="@id/question_total"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/brief_introduction_marin"
+            android:text="@string/question_title" />
+    </RelativeLayout>
+    <!-- 调查具體 -->
+
+    <RelativeLayout
+        android:id="@+id/brief_introducion_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/brief_introduction_height"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/brief_introducion_dec"
+        android:layout_marginTop="14dp" >
+
+        <TextView
+            android:id="@+id/question_Quota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/brief_introduction_marin"
+            android:text="@string/question_Quota" />
+
+        <TextView
+            android:id="@+id/question_aword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/brief_introduction_marin"
+            android:text="@string/question_aword"
+            android:textColor="@color/question_aword" />
+
+        <TextView
+            android:id="@+id/question_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/question_aword"
+            android:layout_alignBottom="@+id/question_aword"
+            android:layout_alignLeft="@+id/question_deadline"
+            android:text="@string/question_date" />
+
+        <TextView
+            android:id="@+id/question_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/question_Quota"
+            android:layout_alignBottom="@+id/question_Quota"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/question_margin"
+            android:text="@string/question_deadline" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/brief_introducion_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/brief_introduction_devide"
+        android:layout_below="@id/brief_introducion_rl"
+        android:background="@color/question_iv" />
+
+    <TextView
+        android:id="@+id/brief_introducion_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brief_introducion_view"
+        android:layout_marginLeft="@dimen/brief_introduction_marin"
+        android:layout_marginTop="20dp"
+        android:text="@string/question_des" />
+
+    <TextView
+        android:id="@+id/brief_introducion_descont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brief_introducion_des"
+        android:layout_marginLeft="@dimen/brief_introduction_marin"
+        android:layout_marginTop="20dp"
+        android:text="@string/question_descont" />
+
+    <Button
+        android:id="@+id/brief_introducion_startanwer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/brief_introduction_button_magin"
+        android:background="@color/blue"
+        android:text="@string/question_start" />
+
+</RelativeLayout>

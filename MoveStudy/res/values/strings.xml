@@ -5,19 +5,18 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
-    
     <!-- 侧边栏按钮 -->
     <string name="button_setting">设置</string>
     <string name="button_feedback">反馈</string>
     <string name="button_about">关于</string>
-    
+
     <!-- 侧边栏菜单 -->
     <string name="menuHome">首页</string>
     <string name="menuGood">学习中心</string>
     <string name="menuNews">个人中心</string>
     <string name="menuStudio">论太天地</string>
     <string name="menuBlog">其他</string>
-    
+
     <!-- 终端店侧边栏菜单 -->
     <string name="tmls_menuHome">主页</string>
     <string name="tmls_menuSell">销售录入</string>
@@ -27,13 +26,13 @@
     <string name="tmls_menuAdvance">建议</string>
     <string name="tmls_menuPerson">个人</string>
     <string name="tmls_menuSet">设置</string>
-    
+
     <!-- 分销商侧边栏菜单 -->
     <string name="dis_menuHome">主页</string>
     <string name="dis_menutmlsmg">分销商管理</string>
     <string name="dis_menuCount">统计</string>
     <string name="dis_menuSet">设置</string>
-    
+
     <!-- 品牌商侧边栏菜单 -->
     <string name="brand_menuHome">主页</string>
     <string name="brand_menuDissc">经销商销量统计</string>
@@ -42,6 +41,24 @@
     <string name="brand_menuNewneed">最新需求</string>
     <string name="brand_menuNewadv">最新投诉建议</string>
     <string name="brand_menuSet">设置</string>
-    
     <string name="press_again_exit">再按一次退出</string>
+
+    <!-- 首页中的文字 -->
+    <string name="home_questionnaire">问卷</string>
+    <string name="home_more">更多问卷</string>
+    <string name="home">首頁</string>
+    <!-- 首页中問卷 title -->
+    <string name="question_title">教育调查</string>
+    <string name="question_date">发布：2015-05-12</string>
+    <string name="question_aword">獎勵：0.5元</string>
+    <string name="question_deadline">截止：不限</string>
+    <string name="question_Quota">限額：不限</string>
+    <string name="question_limit">不限</string>
+    <string name="question_total">共10题</string>
+    <string name="question_des">歡迎使用調查問卷</string>
+    <string name="question_descont">你好，欢迎你使用xxx！xxx致力于为广大客户提供最优质的调研服务，热烈欢迎你加入到我们的行列中来，用你的看法和观点去改变世界，请认真回答下面的问卷哦！回答约认真奖励越高哦</string>
+    <string name="question_start">开始答卷</string>
+    <string name="question_summary">問卷簡介</string>
+    <string name="question_more">更多</string>
+
 </resources>
