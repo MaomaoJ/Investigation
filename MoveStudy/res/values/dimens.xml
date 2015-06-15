@@ -29,6 +29,7 @@
     <dimen name="popupWindow_margin1">20dp</dimen>
 
     <!-- home question item -->
+    <dimen name="home_question_listview_margin">20dp</dimen>
     <dimen name="question_margin">2.5dp</dimen>
     <dimen name="question_item_height">100dp</dimen>
     <dimen name="question_iv">6dp</dimen>
