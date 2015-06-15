@@ -43,7 +43,7 @@ import android.widget.Scroller;
 
 /**
  * 
- * 终端店滚动图�? * 
+ * 
  * A horizontally scrollable {@link ViewGroup} with items populated from an
  * {@link Adapter}. The ViewFlow uses a buffer to store loaded {@link View}s in.
  * The default size of the buffer is 3 elements on both sides of the currently

@@ -1,14 +1,10 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/NORMAL_BACKGROUND_COLOR3"
         android:orientation="vertical"
-        tools:context="${relativePackage}.${activityClass}" >
+        >
 
         <include
             android:id="@+id/main_title"
@@ -40,16 +36,28 @@
             android:background="@android:color/white" >
 
             <TextView
-                android:id="@+id/home_iv_logo"
+                android:id="@+id/home_iv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="问卷" />
+
+            <TextView
+                android:id="@+id/home_iv_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/home_iv_title"
+                android:layout_alignBottom="@id/home_iv_title"
+                android:layout_alignParentRight="true"
+                android:text="更多" />
+
         </RelativeLayout>
 
         <include layout="@layout/border" />
 
-        <include layout="@layout/home_question_item" />
+       <ListView 
+           android:id="@+id/home_listview"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           ></ListView>
     </LinearLayout>
-
-</ScrollView>
