@@ -40,9 +40,13 @@ import android.widget.Toast;
 
 import com.example.movestudy.R;
 import com.investigation.baseAdapter.TmlsBasePageAdapter;
+import com.investigation.biz.AShoppingDao;
+import com.investigation.biz.AccountDao;
 import com.investigation.biz.BaseDao;
 import com.investigation.biz.HomeDao;
 import com.investigation.config.Constants;
+import com.investigation.entity.AShoppingResponseEntity;
+import com.investigation.entity.AccountResponseEntity;
 import com.investigation.entity.CategorysEntity;
 import com.investigation.entity.HomeResponseEntity;
 import com.investigation.entity.NavigationModel;
@@ -86,7 +90,9 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 	private TmlsBasePageAdapter mStudyBasePageAdapter;
 
 	private HomeDao homeDao;
-
+	private AccountDao accountDao;
+    private AShoppingDao aShoppingDao;
+	
 	private List<Object> categoryList;
 
 	private List<NavigationModel> navs;
@@ -202,7 +208,8 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 	private void initClass() {
 
 		homeDao = new HomeDao(this);
-
+		accountDao = new AccountDao(this);
+        aShoppingDao = new AShoppingDao(this);
 	}
 
 	private void initViewPager() {
@@ -376,16 +383,7 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 			showMenu();// �����˵���
 			break;
 
-		case R.id.imageview_above_more:
-			if (isShowPopupWindows) {
-				List<String> tab = new ArrayList<String>();
-				tab.add("�ҵ��ղ�");
-				tab.add("ѧϰ��¼");
-				tab.add("���Լ�¼");
-				new PopupWindowUtil1(mViewPager, 0, this).showActionWindow(v,
-						this, tab);
-			}
-			break;
+
 		case R.id.home_ll:
 			resetIvBackgroundAndText();
 			mHomeiv.setBackgroundResource(R.drawable.home_color);
@@ -396,14 +394,14 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 			resetIvBackgroundAndText();
 			mAccountiv.setBackgroundResource(R.drawable.account_color);
 			mAccountTv.setTextColor(0xff550000);
-			new MyTask().execute(homeDao);
+			new MyTask().execute(accountDao);
 			break;
 
 		case R.id.store_ll:
 			resetIvBackgroundAndText();
 			mStoreiv.setBackgroundResource(R.drawable.store_color);
 			mStoreTv.setTextColor(0xff550000);
-			new MyTask().execute(homeDao);
+			new MyTask().execute(aShoppingDao);
 			break;
 		}
 
@@ -592,6 +590,46 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 					map.put("Entity", myrespResponseEntity);
 				}
 			}
+			else if (dao instanceof AccountDao) {
+			     
+			      mTag = 0;
+			       AccountResponseEntity myrespResponseEntity;
+			       if ((myrespResponseEntity = accountDao.mapperJson(true)) != null) {//��ȡ��ݵ�ʵ��
+			        	//mIndicator.setVisibility(View.GONE);
+			       	try {
+							
+			        	if(myindacaterLayout.getVisibility() == View.VISIBLE){
+			        	   myindacaterLayout.setVisibility(View.GONE);
+			        	}
+			       	} catch (Exception e) {
+							// TODO: handle exception
+						}
+
+			            categorys = homeDao.getCategorys();
+			            map.put("tabs", categorys);
+			            map.put("Entity", myrespResponseEntity);
+			        }
+			    }
+			 else if (dao instanceof AShoppingDao) {
+			     
+			     mTag = 0;
+			      AShoppingResponseEntity myrespResponseEntity;
+			      if ((myrespResponseEntity = aShoppingDao.mapperJson(true)) != null) {//��ȡ��ݵ�ʵ��
+			       	//mIndicator.setVisibility(View.GONE);
+			      	try {
+							
+			       	if(myindacaterLayout.getVisibility() == View.VISIBLE){
+			       	   myindacaterLayout.setVisibility(View.GONE);
+			       	}
+			      	} catch (Exception e) {
+							// TODO: handle exception
+						}
+
+			           categorys = homeDao.getCategorys();
+			           map.put("tabs", categorys);
+			           map.put("Entity", myrespResponseEntity);
+			       }
+			 }
 
 			return map;
 		}

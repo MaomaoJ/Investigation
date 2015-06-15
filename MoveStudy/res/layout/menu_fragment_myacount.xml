@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/NORMAL_BACKGROUND_COLOR3"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <include
+        android:id="@+id/account_main_title"
+        layout="@layout/above_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#e84e32" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_myaccount_mymoney"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/account_mymoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="10交换币"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="#ff8800" />
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+    <TextView
+        android:id="@+id/account_exchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="7pt"
+        android:text="可兑换：80交易币" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="#ff8800" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f3c259"
+        android:text="@string/fragment_myaccount_button_exchange" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#e6e6e6">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#e6e6e6"
+        android:text="@string/fragment_myaccount_exchange_record" />
+</RelativeLayout>
+    <ListView
+        android:id="@+id/account_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
