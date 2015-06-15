@@ -16,7 +16,7 @@ import com.investigation.entity.CategorysEntity;
 import com.investigation.entity.HomeResponseEntity;
 import com.investigation.entity.base.BaseResponseData;
 import com.investigation.slidingmenu.SlidingActivityHelper;
-import com.investigation.ui.TmlStore_MainActivity.MyTask;
+import com.investigation.ui.Vote_MainActivity.MyTask;
 import com.investigation.view.HomePageFragment;
 
 import android.R.integer;

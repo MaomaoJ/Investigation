@@ -1,7 +1,7 @@
 package com.investigation.ui;
 
 import com.example.movestudy.R;
-import com.investigation.ui.TmlStore_MainActivity;
+import com.investigation.ui.Vote_MainActivity;
 import com.investigation.ui.base.BaseActivity;
 
 import android.app.Activity;
@@ -31,7 +31,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 	
-			openActivity(TmlStore_MainActivity.class);
+			openActivity(Vote_MainActivity.class);
 		
 	}
 

@@ -7,13 +7,6 @@ import android.util.AttributeSet;
 import android.widget.GridView;
 
 public class CustomGridView extends GridView {
-	/**
-	 * GridView(�����ͼ)�ǰ������еķ�ʽ����ʾ���ݵģ�һ��������ʾͼƬ��ͼƬ�����ݣ�����ʵ�־Ź���ͼ����GridView����ѡ��
-	 * Ҳ����򵥵ġ���Ҫ��������Adapter��(֮�Ź���Ҳ������
-	 * @param context
-	 * @param attrs
-	 * @param defStyle
-	 */
 
 	public CustomGridView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
