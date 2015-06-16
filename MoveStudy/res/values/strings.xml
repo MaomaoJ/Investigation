@@ -60,5 +60,13 @@
     <string name="question_start">开始答卷</string>
     <string name="question_summary">問卷簡介</string>
     <string name="question_more">更多</string>
+    
+    <!-- MJ -->
+    <string name="fragment_myaccount_mymoney">我的交易币</string>
+    <string name="fragment_myaccount_button_exchange">立即兑换</string>
+    <string name="fragment_myaccount_exchange_record">账户记录</string>
+    <string name="fragment_accumulated_shopping_button_exchange">兑换奖品</string>
+    <string name="fragment_accumulated_shopping_button_mymoney">我的兑换币</string>
+    <string name="fragment_accumulated_shopping_button_mygoods">我的奖品</string>
 
 </resources>

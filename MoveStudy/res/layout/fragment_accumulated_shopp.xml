@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/NORMAL_BACKGROUND_COLOR3"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <include
+        android:id="@+id/account_main_title"
+        layout="@layout/above_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/shopping_button_exchange"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#e6e6e6"
+            android:text="@string/fragment_accumulated_shopping_button_exchange" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#efefff" />
+
+        <Button
+            android:id="@+id/shopping_button_mymoney"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#e6e6e6"
+            android:text="@string/fragment_accumulated_shopping_button_mymoney" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#efefff" />
+
+        <Button
+            android:id="@+id/shopping_button_mygoods"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#e6e6e6"
+            android:text="@string/fragment_accumulated_shopping_button_mygoods" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#ff8800" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shopping_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

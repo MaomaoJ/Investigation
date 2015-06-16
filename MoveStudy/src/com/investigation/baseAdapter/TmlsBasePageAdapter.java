@@ -12,12 +12,16 @@ import java.util.List;
 
 
 
+import com.investigation.entity.AShoppingResponseEntity;
+import com.investigation.entity.AccountResponseEntity;
 import com.investigation.entity.CategorysEntity;
 import com.investigation.entity.HomeResponseEntity;
 import com.investigation.entity.base.BaseResponseData;
 import com.investigation.slidingmenu.SlidingActivityHelper;
 import com.investigation.ui.Vote_MainActivity.MyTask;
+import com.investigation.view.Accumulated_Shopping_Fragment;
 import com.investigation.view.HomePageFragment;
+import com.investigation.view.My_Account_Fragment;
 
 import android.R.integer;
 import android.app.Activity;
@@ -62,6 +66,14 @@ public class TmlsBasePageAdapter extends FragmentStatePagerAdapter {
 		if(baseResponseData instanceof HomeResponseEntity){
 			tabs = mList;
 			addTab(new HomePageFragment(mActivity,this,mHelper));
+		}
+		else if(baseResponseData instanceof AccountResponseEntity){
+			tabs = mList;
+			addTab(new My_Account_Fragment(mActivity,this,mHelper));
+		}
+		else if(baseResponseData instanceof AShoppingResponseEntity){
+			tabs = mList;
+			addTab(new Accumulated_Shopping_Fragment(mActivity,this,mHelper));
 		}
 		}
 
