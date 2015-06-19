@@ -1,23 +1,22 @@
 package com.investigation.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.movestudy.R;
 import com.investigation.baseAdapter.TmlsBasePageAdapter;
-import com.investigation.entity.AccountListItemEntity;
 import com.investigation.slidingmenu.SlidingActivityHelper;
 
 @SuppressLint("ValidFragment")
@@ -95,7 +94,20 @@ public class Accumulated_Shopping_Fragment extends Fragment implements OnClickLi
 			 mAboveTitle = (TextView)view.findViewById(R.id.tv_above_title);
 			 mAboveTitle.setText("积分商城");
 			 llGoHome = (ImageView)view.findViewById(R.id.Linear_above_toHome);
-			llGoHome.setVisibility(View.INVISIBLE);
+			 llGoHome.setVisibility(View.INVISIBLE);
+			 
+			 android.support.v4.app.FragmentManager fm = getChildFragmentManager();
+				// 开启事务
+			 android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();//对fragment操作必要的东西
+			 ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity));
+			 ft.commit();
+			 
+			 Button button_exchange = (Button)view.findViewById(R.id.shopping_button_exchange);
+			 button_exchange.setOnClickListener(this);
+			 Button button_mymoney = (Button)view.findViewById(R.id.shopping_button_mymoney);
+			 button_exchange.setOnClickListener(this);
+			 Button button_mygoods = (Button)view.findViewById(R.id.shopping_button_mygoods);
+			 button_exchange.setOnClickListener(this);
 			
 		   
 			 return view;
@@ -106,9 +118,24 @@ public class Accumulated_Shopping_Fragment extends Fragment implements OnClickLi
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			
+			// 获取FragmentManager对象
+						
+			 android.support.v4.app.FragmentManager fm = getChildFragmentManager();
+				// 开启事务
+			 android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();//对fragment操作必要的东西
 			switch (v.getId()) {
-            case R.id.Linear_above_toHome://监听above_title中的控件
-                mHelper.showMenu();//调出菜单栏
+            case R.id.shopping_button_exchange://监听above_title中的控件
+            	// 替换R.id.content中的Fragment
+            	
+				ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity));
+				ft.commit();
+                break;
+            case R.id.shopping_button_mymoney://监听above_title中的控件
+                
+                break;
+           case R.id.shopping_button_mygoods://监听above_title中的控件
+    
                 break;
 			}
 		}

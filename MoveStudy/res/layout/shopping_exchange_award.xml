@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content" 
+    >
+<LinearLayout  
+    
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content" 
+    android:orientation="vertical" >  
+  
+    <com.investigation.widget.GrapeGridview
+        android:id="@+id/award_list_GridView_top"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"
+        android:columnWidth="180dp"
+        android:numColumns="2"
+        android:verticalSpacing="3dp"
+        android:horizontalSpacing="3dp"
+        android:stretchMode="columnWidth"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"    
+        />   
+         <com.investigation.widget.GrapeGridview
+        android:id="@+id/award_list_GridView_blow"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"
+        android:columnWidth="135dp"
+        android:numColumns="3"
+        android:verticalSpacing="3dp"
+        android:horizontalSpacing="3dp"
+        android:stretchMode="columnWidth"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"    
+        />     
+  
+
+</LinearLayout> 
+  </ScrollView>

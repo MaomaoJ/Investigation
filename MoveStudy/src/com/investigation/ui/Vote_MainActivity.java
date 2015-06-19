@@ -656,10 +656,10 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 
 			}
 			mViewPager.setVisibility(View.VISIBLE);// ��ʾ���pager
-			mStudyBasePageAdapter.notifyDataSetChanged();// notifyDataSetChanged����ͨ��һ���ⲿ�ķ�������
+			//mStudyBasePageAdapter.notifyDataSetChanged();// notifyDataSetChanged����ͨ��һ���ⲿ�ķ�������
 			// ��������������ݸı�ʱ��Ҫǿ�Ƶ���getView��ˢ��ÿ��Item������,����ʵ�ֶ�̬��ˢ���б�Ĺ��ܡ�
 			mViewPager.setCurrentItem(0);
-			mIndicator.notifyDataSetChanged();
+			//mIndicator.notifyDataSetChanged();
 
 		}
 	}
