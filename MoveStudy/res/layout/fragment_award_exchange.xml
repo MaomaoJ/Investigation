@@ -1,0 +1,104 @@
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/NORMAL_BACKGROUND_COLOR3"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+   <ImageView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:src="@drawable/kindle_jieshao"
+       />
+   <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       >
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:text="亚马逊kiddle电子阅读器"
+           />
+   </RelativeLayout>
+   
+    <RelativeLayout 
+       android:layout_width="match_parent"
+       android:background="#e6e6e6"
+       android:layout_height="40dp"
+       >
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:background="#e6e6e6"
+           android:text="兑换要求"
+           />
+   </RelativeLayout>
+   
+     <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       >
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:text="89900交易币"
+           />
+   </RelativeLayout>
+    <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:background="#e6e6e6"
+       >
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:background="#e6e6e6"
+           android:text="产品介绍"
+           />
+   </RelativeLayout>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:text="多语种阅读，轻松携带和阅读个人文档，支持阅读漫画，轻松联网搜索，管理你的图书馆，永久保存图书"
+           />
+   <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f3c259"
+        android:text="兑换" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+
+    <Button
+        android:id="@+id/button_return_shopping"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f3c259"
+        android:text="返回积分商城" />
+   <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:background="#ffffff" />
+</LinearLayout>
+</ScrollView>
