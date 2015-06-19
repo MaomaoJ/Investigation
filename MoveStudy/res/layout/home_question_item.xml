@@ -15,7 +15,8 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/question_date"
             android:layout_margin="@dimen/question_margin"
-            android:text="@string/question_deadline" />
+            android:text="@string/question_deadline"
+            android:textColor="@color/backColor" />
 
         <TextView
             android:id="@+id/question_limit"
@@ -24,7 +25,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_margin="@dimen/question_margin"
-            android:text="@string/question_limit" />
+            android:text="@string/question_limit"
+            android:textColor="@color/backColor" />
 
         <TextView
             android:id="@+id/question_title"
@@ -42,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question_title"
             android:layout_margin="@dimen/question_margin"
-            android:text="@string/question_date" />
+            android:text="@string/question_date"
+            android:textColor="@color/backColor" />
 
         <TextView
             android:id="@+id/question_Quota"
@@ -52,7 +55,8 @@
             android:layout_alignBaseline="@id/question_deadline"
             android:layout_alignRight="@+id/question_limit"
             android:layout_margin="@dimen/question_margin"
-            android:text="@string/question_Quota" />
+            android:text="@string/question_Quota"
+            android:textColor="@color/backColor" />
 
         <TextView
             android:id="@+id/question_aword"

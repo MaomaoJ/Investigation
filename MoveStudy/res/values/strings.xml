@@ -60,7 +60,9 @@
     <string name="question_start">开始答卷</string>
     <string name="question_summary">問卷簡介</string>
     <string name="question_more">更多</string>
-    
+    <string name="question_content_next">下一题</string>
+    <string name="question_content_commit">提交</string>
+
     <!-- MJ -->
     <string name="fragment_myaccount_mymoney">我的交易币</string>
     <string name="fragment_myaccount_button_exchange">立即兑换</string>

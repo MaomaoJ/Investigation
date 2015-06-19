@@ -12,11 +12,13 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
-        <!-- 
+        android:theme="@style/AppTheme" >
+
+        <!--
                          两种不同的主题
-        android:theme="@style/AppTheme"  android:theme="@style/Theme.splash" -->
-        <!-- 
+        android:theme="@style/AppTheme"  android:theme="@style/Theme.splash"
+        -->
+        <!--
         <activity
             android:name="com.ms.ui.OnLineTestActivity"
             android:label="@string/app_name" >
@@ -26,8 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         -->
-         <activity
+        -->
+        <activity
             android:name="com.investigation.ui.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -39,24 +41,33 @@
         <activity
             android:name="com.investigation.ui.Vote_MainActivity"
             android:label="@string/app_name" >
-            
         </activity>
         <activity
             android:name="com.investigation.ui.Distributor_MainActivity"
             android:label="@string/app_name" >
-         
         </activity>
         <activity
             android:name="com.investigation.ui.Brand_MainActivity"
             android:label="@string/app_name" >
-        
         </activity>
-         <activity
+        <activity
             android:name="com.investigation.ui.LoginActivity"
             android:label="@string/app_name" >
-        
         </activity>
-        
+        <activity
+            android:name="com.investigation.ui.HomeQuestionActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.investigation.ui.HomeQuestionBriefIntroductionActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.investigation.ui.HomeQuestionContentFActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>
