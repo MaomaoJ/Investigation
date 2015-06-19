@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/NORMAL_BACKGROUND_COLOR3"
+    android:orientation="horizontal"
+    tools:context="${relativePackage}.${activityClass}" >
+
+   <TextView 
+       android:id = "@+id/people_number"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:textColor="#ff0000"
+       android:textSize="6pt"
+       />
+<TextView 
+       android:id = "@+id/people_award_name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:textColor="#ff0000"
+       android:textSize="6pt"
+       />
+
+    
+
+</LinearLayout>

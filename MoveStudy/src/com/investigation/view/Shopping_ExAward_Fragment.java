@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.audiofx.Visualizer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -39,6 +41,7 @@ public class Shopping_ExAward_Fragment extends Fragment{
 	public View view;
 	public Activity activity;
 	public ListView myListView;
+	Handler handler;
 	
 	
 	
@@ -51,9 +54,10 @@ public class Shopping_ExAward_Fragment extends Fragment{
 	public Shopping_ExAward_Fragment(){
 		super();
 	}
-	public Shopping_ExAward_Fragment(Activity activity){
+	public Shopping_ExAward_Fragment(Activity activity,Handler handler){
 		
 		super();
+		this.handler = handler;
 		System.out.println(">>>>>测试");
 		this.activity = activity;
 	}
@@ -122,7 +126,13 @@ public class Shopping_ExAward_Fragment extends Fragment{
 		            { 
 		                public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
 		                { 
-		                  
+		                	Message message = new Message();
+	    					
+	    		            message.what = 1; 
+
+	    				
+	    				
+	    				handler.sendMessage(message);
 		               
 		                } 
 		            }); 
@@ -161,7 +171,13 @@ public class Shopping_ExAward_Fragment extends Fragment{
 		            { 
 		                public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
 		                { 
-		                  
+		                	Message message = new Message();
+		    					
+		    		            message.what = 1; 
+
+		    				
+		    				
+		    				handler.sendMessage(message);
 		               
 		                } 
 		            }); 

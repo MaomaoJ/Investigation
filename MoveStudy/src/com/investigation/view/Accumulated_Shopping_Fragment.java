@@ -4,7 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +42,7 @@ public class Accumulated_Shopping_Fragment extends Fragment implements OnClickLi
 	
 	SlidingActivityHelper mHelper;
 	TextView mAboveTitle;
+	private Handler mHandler;
 	  
 	@SuppressLint("ValidFragment")
 	public Accumulated_Shopping_Fragment(Activity activity,TmlsBasePageAdapter studyBasePageAdapter,SlidingActivityHelper mHelper){
@@ -95,20 +99,42 @@ public class Accumulated_Shopping_Fragment extends Fragment implements OnClickLi
 			 mAboveTitle.setText("积分商城");
 			 llGoHome = (ImageView)view.findViewById(R.id.Linear_above_toHome);
 			 llGoHome.setVisibility(View.INVISIBLE);
+		
+			 
+			 mHandler = new Handler(){
+		        	public void handleMessage(Message msg) {  
+		        		android.support.v4.app.FragmentManager fm = getChildFragmentManager();
+						// 开启事务
+					 android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();//对fragment操作必要的东西
+		                   switch (msg.what) {
+		                   case 1:
+		       				// 开启事务
+		       			 ft.replace(R.id.shopping_fragment_content, new Award_exchange_fragment(myActivity,mHandler));
+		       			 ft.commit();
+		       			 break;
+		                   case 2:
+				       				// 开启事务
+				       			 ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity,mHandler));
+				       			 ft.commit();
+				       			 break;
+		                   }
+		        	}
+		        	};
 			 
 			 android.support.v4.app.FragmentManager fm = getChildFragmentManager();
 				// 开启事务
 			 android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();//对fragment操作必要的东西
-			 ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity));
+			 ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity,mHandler));
 			 ft.commit();
 			 
 			 Button button_exchange = (Button)view.findViewById(R.id.shopping_button_exchange);
 			 button_exchange.setOnClickListener(this);
 			 Button button_mymoney = (Button)view.findViewById(R.id.shopping_button_mymoney);
-			 button_exchange.setOnClickListener(this);
+			 button_mymoney.setOnClickListener(this);
 			 Button button_mygoods = (Button)view.findViewById(R.id.shopping_button_mygoods);
-			 button_exchange.setOnClickListener(this);
+			 button_mygoods.setOnClickListener(this);
 			
+		
 		   
 			 return view;
 		}
@@ -118,7 +144,6 @@ public class Accumulated_Shopping_Fragment extends Fragment implements OnClickLi
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			
 			// 获取FragmentManager对象
 						
 			 android.support.v4.app.FragmentManager fm = getChildFragmentManager();
@@ -128,11 +153,13 @@ public class Accumulated_Shopping_Fragment extends Fragment implements OnClickLi
             case R.id.shopping_button_exchange://监听above_title中的控件
             	// 替换R.id.content中的Fragment
             	
-				ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity));
+				ft.replace(R.id.shopping_fragment_content, new Shopping_ExAward_Fragment(myActivity,mHandler));
 				ft.commit();
                 break;
             case R.id.shopping_button_mymoney://监听above_title中的控件
-                
+            	System.out.println(">>>>>>测试1");
+            	ft.replace(R.id.shopping_fragment_content, new Shopping_Mymoney_fragment(myActivity));
+				ft.commit();
                 break;
            case R.id.shopping_button_mygoods://监听above_title中的控件
     
