@@ -151,12 +151,11 @@ public class HomePageFragment extends Fragment implements OnClickListener {
 			intent.putExtra(Home.home_intent, bundle);
 			startActivity(intent);
 			break;
-
-		// TODO Auto-generated method stub
-		switch (v.getId()) {
         case R.id.Linear_above_toHome://监听above_title中的控件
             mHelper.showMenu();//调出菜单栏
             break;
 		}
 	}
 }
+	
+
