@@ -315,23 +315,20 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 	private void initNav() {
 		navs = new ArrayList<NavigationModel>();
 		NavigationModel nav1 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuHome), "");
+				R.string.pyb_menuHome), "");
 		NavigationModel nav2 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuSell), Constants.TAGS.STUDY_TAG);
+				R.string.pyb_myInvitation), Constants.TAGS.STUDY_TAG);
 		NavigationModel nav3 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuStock), Constants.TAGS.NEWS_TAG);
+				R.string.pyb_alterpassword), Constants.TAGS.NEWS_TAG);
 		NavigationModel nav4 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuCount), Constants.TAGS.WIKI_TAG);
+				R.string.pyb_sysnotification), Constants.TAGS.WIKI_TAG);
 		NavigationModel nav5 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuHelp), Constants.TAGS.BLOG_TAG);
+				R.string.pyb_about), Constants.TAGS.BLOG_TAG);
 		NavigationModel nav6 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuAdvance), Constants.TAGS.ADVANCE_TAG);
-		NavigationModel nav7 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuPerson), Constants.TAGS.PERSON_TAG);
-		NavigationModel nav8 = new NavigationModel(getResources().getString(
-				R.string.tmls_menuSet), Constants.TAGS.SET_TAG);
+				R.string.pyb_quit), Constants.TAGS.ADVANCE_TAG);
+		
 		Collections
-				.addAll(navs, nav1, nav2, nav3, nav4, nav5, nav6, nav7, nav8);
+				.addAll(navs, nav1, nav2, nav3, nav4, nav5, nav6);
 	}
 
 	private void initgoHome() {
@@ -341,37 +338,30 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 	private List<Map<String, Object>> getData() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuHome));
+		map.put(LIST_TEXT, getResources().getString(R.string.pyb_menuHome));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_handpick);
 		list.add(map);
 		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuSell));
+		map.put(LIST_TEXT, getResources().getString(R.string.pyb_myInvitation));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_studio);
 		list.add(map);
 		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuStock));
+		map.put(LIST_TEXT, getResources().getString(R.string.pyb_alterpassword));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_news);
 		list.add(map);
 		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuCount));
-		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_blog);
-		list.add(map);
-		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuHelp));
+		map.put(LIST_TEXT, getResources().getString(R.string.pyb_sysnotification));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_studio);
 		list.add(map);
 		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuAdvance));
-		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_news);
-		list.add(map);
-		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuPerson));
+		map.put(LIST_TEXT, getResources().getString(R.string.pyb_about));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_blog);
 		list.add(map);
 		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.tmls_menuSet));
+		map.put(LIST_TEXT, getResources().getString(R.string.pyb_quit));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_studio);
 		list.add(map);
+		
 		return list;
 	}
 
