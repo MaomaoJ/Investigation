@@ -18,14 +18,13 @@
     <string name="menuBlog">其他</string>
 
     <!-- 终端店侧边栏菜单 -->
-    <string name="tmls_menuHome">主页</string>
-    <string name="tmls_menuSell">销售录入</string>
-    <string name="tmls_menuStock">库存录入</string>
-    <string name="tmls_menuCount">统计</string>
-    <string name="tmls_menuHelp">帮助</string>
-    <string name="tmls_menuAdvance">建议</string>
-    <string name="tmls_menuPerson">个人</string>
-    <string name="tmls_menuSet">设置</string>
+    <string name="pyb_menuHome">主页</string>
+    <string name="pyb_myInvitation">我的邀请码</string>
+    <string name="pyb_alterpassword">修改密码</string>
+    <string name="pyb_sysnotification">系统通知</string>
+    <string name="pyb_about">关于我们</string>
+    <string name="pyb_quit">退出登录</string>
+    
 
     <!-- 分销商侧边栏菜单 -->
     <string name="dis_menuHome">主页</string>
