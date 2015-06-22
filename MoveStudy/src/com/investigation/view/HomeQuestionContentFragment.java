@@ -1,24 +1,25 @@
 package com.investigation.view;
 
-import android.app.ActionBar.LayoutParams;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.movestudy.R;
 import com.investigation.biz.Question;
 import com.investigation.config.Constants.Home;
 import com.investigation.utils.ToastUtil;
-import com.umeng.common.net.m;
 
 /**
  * author：qiuchunjia time：下午8:32:05 类描述：这个类是实现
@@ -60,7 +61,7 @@ public class HomeQuestionContentFragment extends Fragment {
 			createCheckButton();
 			break;
 		case Home.question_content_type_photo:
-
+			createPhotoButon();
 			break;
 		}
 	}
@@ -77,7 +78,7 @@ public class HomeQuestionContentFragment extends Fragment {
 	}
 
 	// 创建单选框按鈕
-	private void createRadioButton(String[] array) {
+	public void createRadioButton(String[] array) {
 		RadioGroup group = new RadioGroup(getActivity());
 		for (int i = 0; i < array.length; i++) {
 			RadioButton radio = new RadioButton(getActivity());
@@ -88,7 +89,7 @@ public class HomeQuestionContentFragment extends Fragment {
 	}
 
 	// 创建復選框按鈕
-	private void createCheckButton(String[] array) {
+	public void createCheckButton(String[] array) {
 		for (int i = 0; i < array.length; i++) {
 			CheckBox radio = new CheckBox(getActivity());
 			radio.setText(array[i]);
@@ -97,9 +98,15 @@ public class HomeQuestionContentFragment extends Fragment {
 	}
 
 	// 创建输入框
-	private void createCheckButton() {
+	public void createCheckButton() {
 		EditText editText = new EditText(getActivity());
 		addViewToView(editText);
+	}
 
+	// 创建拍照按钮以及拍照后把照片显示到上面
+	public void createPhotoButon() {
+		RelativeLayout layout = (RelativeLayout) mView
+				.findViewById(R.id.fragment_rl);
+		layout.setVisibility(View.VISIBLE);
 	}
 }

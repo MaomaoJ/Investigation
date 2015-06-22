@@ -9,8 +9,28 @@
         android:id="@+id/fragment_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1.你的家庭收入是："
-        
-         />
+        android:text="" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/fragment_photoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="拍照" />
+
+        <ImageView
+            android:id="@+id/fragment_iv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+    </RelativeLayout>
 
 </LinearLayout>
