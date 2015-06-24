@@ -73,9 +73,11 @@ public class HomePageFragment extends Fragment implements OnClickListener {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		mView = inflater.inflate(R.layout.home, null);
-		ImageView tohomeButton = (ImageView) mView.findViewById(R.id.Linear_above_toHome);
+		ImageView tohomeButton = (ImageView) mView
+				.findViewById(R.id.Linear_above_toHome);
 		tohomeButton.setOnClickListener(this);
-		TextView tv_above_title = (TextView)mView.findViewById(R.id.tv_above_title);
+		TextView tv_above_title = (TextView) mView
+				.findViewById(R.id.tv_above_title);
 		tv_above_title.setText("首页");
 		return mView;
 	}
@@ -142,7 +144,7 @@ public class HomePageFragment extends Fragment implements OnClickListener {
 	}
 
 	@Override
-	public void onClick(View v){
+	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.home_iv_more:
 			Intent intent = new Intent(myActivity, HomeQuestionActivity.class);
@@ -151,11 +153,9 @@ public class HomePageFragment extends Fragment implements OnClickListener {
 			intent.putExtra(Home.home_intent, bundle);
 			startActivity(intent);
 			break;
-        case R.id.Linear_above_toHome://监听above_title中的控件
-            mHelper.showMenu();//调出菜单栏
-            break;
+		case R.id.Linear_above_toHome:// 监听above_title中的控件
+			mHelper.showMenu();// 调出菜单栏
+			break;
 		}
 	}
 }
-	
-

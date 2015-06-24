@@ -38,6 +38,8 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.example.movestudy.R;
 import com.investigation.baseAdapter.TmlsBasePageAdapter;
 import com.investigation.biz.AShoppingDao;
@@ -49,12 +51,18 @@ import com.investigation.entity.AShoppingResponseEntity;
 import com.investigation.entity.AccountResponseEntity;
 import com.investigation.entity.CategorysEntity;
 import com.investigation.entity.HomeResponseEntity;
+import com.investigation.entity.Integration;
 import com.investigation.entity.NavigationModel;
+import com.investigation.entity.Option;
+import com.investigation.entity.Questionnaire;
+import com.investigation.entity.Solution4Questionnaire;
+import com.investigation.entity.Solution4Topic;
+import com.investigation.entity.Topic;
+import com.investigation.entity.User;
 import com.investigation.entity.base.BaseResponseData;
 import com.investigation.indicator.TitlePageIndicator;
 import com.investigation.slidingmenu.SlidingMenu;
 import com.investigation.ui.base.BaseSlidingFragmentActivity;
-import com.investigation.utils.PopupWindowUtil1;
 import com.investigation.view.HomePageFragment;
 
 public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
@@ -91,8 +99,8 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 
 	private HomeDao homeDao;
 	private AccountDao accountDao;
-    private AShoppingDao aShoppingDao;
-	
+	private AShoppingDao aShoppingDao;
+
 	private List<Object> categoryList;
 
 	private List<NavigationModel> navs;
@@ -134,6 +142,7 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initSlidingMenu();
+		initLeanCould();
 		setContentView(R.layout.above_slidingmenu);
 		initClass();
 		initControl();
@@ -141,6 +150,19 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 		initListView();
 		initgoHome();
 		initNav();
+	}
+
+	private void initLeanCould() {
+		AVOSCloud.initialize(this,
+				"4d1w9bpmg2kgvjvwe5t5r1525s4ab6mxi8m8ibabv7i32ldy",
+				"zoqyx2c9zu1uym4sls3e80oa2silbkb063arfx6w66yoopwp");
+		AVObject.registerSubclass(User.class);
+		AVObject.registerSubclass(Questionnaire.class);
+		AVObject.registerSubclass(Topic.class);
+		AVObject.registerSubclass(Option.class);
+		AVObject.registerSubclass(Solution4Questionnaire.class);
+		AVObject.registerSubclass(Solution4Topic.class);
+		AVObject.registerSubclass(Integration.class);
 	}
 
 	@Override
@@ -209,7 +231,7 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 
 		homeDao = new HomeDao(this);
 		accountDao = new AccountDao(this);
-        aShoppingDao = new AShoppingDao(this);
+		aShoppingDao = new AShoppingDao(this);
 	}
 
 	private void initViewPager() {
@@ -326,9 +348,8 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 				R.string.pyb_about), Constants.TAGS.BLOG_TAG);
 		NavigationModel nav6 = new NavigationModel(getResources().getString(
 				R.string.pyb_quit), Constants.TAGS.ADVANCE_TAG);
-		
-		Collections
-				.addAll(navs, nav1, nav2, nav3, nav4, nav5, nav6);
+
+		Collections.addAll(navs, nav1, nav2, nav3, nav4, nav5, nav6);
 	}
 
 	private void initgoHome() {
@@ -350,7 +371,8 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_news);
 		list.add(map);
 		map = new HashMap<String, Object>();
-		map.put(LIST_TEXT, getResources().getString(R.string.pyb_sysnotification));
+		map.put(LIST_TEXT,
+				getResources().getString(R.string.pyb_sysnotification));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_studio);
 		list.add(map);
 		map = new HashMap<String, Object>();
@@ -361,7 +383,7 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 		map.put(LIST_TEXT, getResources().getString(R.string.pyb_quit));
 		map.put(LIST_IMAGEVIEW, R.drawable.dis_menu_studio);
 		list.add(map);
-		
+
 		return list;
 	}
 
@@ -372,7 +394,6 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 		case R.id.Linear_above_toHome:// ����above_title�еĿؼ�
 			showMenu();// �����˵���
 			break;
-
 
 		case R.id.home_ll:
 			resetIvBackgroundAndText();
@@ -579,47 +600,45 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 					map.put("tabs", categorys);
 					map.put("Entity", myrespResponseEntity);
 				}
+			} else if (dao instanceof AccountDao) {
+
+				mTag = 0;
+				AccountResponseEntity myrespResponseEntity;
+				if ((myrespResponseEntity = accountDao.mapperJson(true)) != null) {// ��ȡ��ݵ�ʵ��
+					// mIndicator.setVisibility(View.GONE);
+					try {
+
+						if (myindacaterLayout.getVisibility() == View.VISIBLE) {
+							myindacaterLayout.setVisibility(View.GONE);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+					categorys = homeDao.getCategorys();
+					map.put("tabs", categorys);
+					map.put("Entity", myrespResponseEntity);
+				}
+			} else if (dao instanceof AShoppingDao) {
+
+				mTag = 0;
+				AShoppingResponseEntity myrespResponseEntity;
+				if ((myrespResponseEntity = aShoppingDao.mapperJson(true)) != null) {// ��ȡ��ݵ�ʵ��
+					// mIndicator.setVisibility(View.GONE);
+					try {
+
+						if (myindacaterLayout.getVisibility() == View.VISIBLE) {
+							myindacaterLayout.setVisibility(View.GONE);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+					categorys = homeDao.getCategorys();
+					map.put("tabs", categorys);
+					map.put("Entity", myrespResponseEntity);
+				}
 			}
-			else if (dao instanceof AccountDao) {
-			     
-			      mTag = 0;
-			       AccountResponseEntity myrespResponseEntity;
-			       if ((myrespResponseEntity = accountDao.mapperJson(true)) != null) {//��ȡ��ݵ�ʵ��
-			        	//mIndicator.setVisibility(View.GONE);
-			       	try {
-							
-			        	if(myindacaterLayout.getVisibility() == View.VISIBLE){
-			        	   myindacaterLayout.setVisibility(View.GONE);
-			        	}
-			       	} catch (Exception e) {
-							// TODO: handle exception
-						}
-
-			            categorys = homeDao.getCategorys();
-			            map.put("tabs", categorys);
-			            map.put("Entity", myrespResponseEntity);
-			        }
-			    }
-			 else if (dao instanceof AShoppingDao) {
-			     
-			     mTag = 0;
-			      AShoppingResponseEntity myrespResponseEntity;
-			      if ((myrespResponseEntity = aShoppingDao.mapperJson(true)) != null) {//��ȡ��ݵ�ʵ��
-			       	//mIndicator.setVisibility(View.GONE);
-			      	try {
-							
-			       	if(myindacaterLayout.getVisibility() == View.VISIBLE){
-			       	   myindacaterLayout.setVisibility(View.GONE);
-			       	}
-			      	} catch (Exception e) {
-							// TODO: handle exception
-						}
-
-			           categorys = homeDao.getCategorys();
-			           map.put("tabs", categorys);
-			           map.put("Entity", myrespResponseEntity);
-			       }
-			 }
 
 			return map;
 		}
@@ -646,10 +665,11 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 
 			}
 			mViewPager.setVisibility(View.VISIBLE);// ��ʾ���pager
-			//mStudyBasePageAdapter.notifyDataSetChanged();// notifyDataSetChanged����ͨ��һ���ⲿ�ķ�������
+			// mStudyBasePageAdapter.notifyDataSetChanged();//
+			// notifyDataSetChanged����ͨ��һ���ⲿ�ķ�������
 			// ��������������ݸı�ʱ��Ҫǿ�Ƶ���getView��ˢ��ÿ��Item������,����ʵ�ֶ�̬��ˢ���б�Ĺ��ܡ�
 			mViewPager.setCurrentItem(0);
-			//mIndicator.notifyDataSetChanged();
+			// mIndicator.notifyDataSetChanged();
 
 		}
 	}

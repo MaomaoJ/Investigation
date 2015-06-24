@@ -1,15 +1,20 @@
 package com.investigation.view;
 
-import android.graphics.Color;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -31,6 +36,8 @@ public class HomeQuestionContentFragment extends Fragment {
 	private TextView mTitle;
 	private LinearLayout mFragmentll;
 	private Question mQuestion;
+	ImageView mImageView;
+	static final int REQUEST_IMAGE_CAPTURE = 1;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +82,7 @@ public class HomeQuestionContentFragment extends Fragment {
 		mTitle = (TextView) mView.findViewById(R.id.fragment_tv);
 		mFragmentll = (LinearLayout) mView.findViewById(R.id.fragment_ll);
 		mQuestion = bundle.getParcelable(Home.home_bundle_ToFragment);
+		mImageView = (ImageView) mView.findViewById(R.id.fragment_iv);
 	}
 
 	// 创建单选框按鈕
@@ -108,5 +116,30 @@ public class HomeQuestionContentFragment extends Fragment {
 		RelativeLayout layout = (RelativeLayout) mView
 				.findViewById(R.id.fragment_rl);
 		layout.setVisibility(View.VISIBLE);
+		Button button = (Button) mView.findViewById(R.id.fragment_photoButton);
+		button.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// 调用系统的Camera
+				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+			}
+		});
 	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Log.i("tag", "onActivityResult(requestCode, resultCode, data);");
+		if (requestCode == REQUEST_IMAGE_CAPTURE
+				&& resultCode == Activity.RESULT_OK) {
+			Bundle extras = data.getExtras();
+			Bitmap imageBitmap = (Bitmap) extras.get("data");
+			mImageView.setImageBitmap(imageBitmap);
+			Log.i("tag", "requestCode == REQUEST_IMAGE_CAPTURE");
+		}
+		Log.i("tag", "onActivityResult(requestCode, resultCode, data)---end;");
+	}
+
 }
