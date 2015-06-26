@@ -15,8 +15,6 @@
  */
 package com.investigation.baseAdapter;
 
-
-
 import com.example.movestudy.R;
 
 import android.content.Context;
@@ -30,11 +28,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
 /**
- * 
- * 终端店首页的滚动图片的�?配器
- * 
- * @author caoligai
+ * @author qcj
  *
  */
 public class ImageAdapter extends BaseAdapter {
@@ -52,8 +48,8 @@ public class ImageAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return Integer.MAX_VALUE;// 返回很大的�?使得getView中的position不断增大来实现循�?	
-		}
+		return Integer.MAX_VALUE;// 返回很大的�?使得getView中的position不断增大来实现循�?
+	}
 
 	@Override
 	public Object getItem(int position) {
@@ -81,7 +77,8 @@ public class ImageAdapter extends BaseAdapter {
 				// intent.putExtras(bundle);
 				// mContext.startActivity(intent);
 
-				Toast.makeText(mContext, "点击了第 " + position % ids.length  + " 张图�?",
+				Toast.makeText(mContext,
+						"点击了第 " + position % ids.length + " 张图�?",
 						Toast.LENGTH_SHORT).show();
 
 			}

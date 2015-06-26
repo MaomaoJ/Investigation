@@ -36,5 +36,6 @@
     <color name="question_iv">#555</color>
     <color name="question_cover_color">#888</color>
     <color name="question_aword">#5f60e0</color>
+    <color name="question_button">#e84e32</color>
 
 </resources>

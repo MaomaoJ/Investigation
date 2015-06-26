@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MoveStudy</string>
+    <string name="app_name">朋友帮</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
@@ -59,7 +59,9 @@
     <string name="question_start">开始答卷</string>
     <string name="question_summary">問卷簡介</string>
     <string name="question_more">更多</string>
-    
+    <string name="question_content_next">下一题</string>
+    <string name="question_content_commit">提交</string>
+
     <!-- MJ -->
     <string name="fragment_myaccount_mymoney">我的交易币</string>
     <string name="fragment_myaccount_button_exchange">立即兑换</string>
