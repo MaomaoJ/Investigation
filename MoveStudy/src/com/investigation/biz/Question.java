@@ -8,11 +8,10 @@ import android.os.Parcelable;
  *
  */
 
-public  class Question implements Parcelable {
+public class Question implements Parcelable {
 	public int mType = -1;
 	public String mTitle;
 	public String[] mContent;
-
 
 	public void setTitle(String str) {
 		this.mTitle = str;
@@ -48,14 +47,14 @@ public  class Question implements Parcelable {
 		dest.writeInt(mType);
 		dest.writeString(mTitle);
 		dest.writeStringArray(mContent);
-		
 	}
+
 	public static final Parcelable.Creator<Question> CREATOR = new Parcelable.Creator<Question>() {
 		public Question createFromParcel(Parcel in) {
-			Question entity=new Question();
-			entity.mType=in.readInt();
-			entity.mTitle=in.readString();
-			entity.mContent=in.createStringArray();
+			Question entity = new Question();
+			entity.mType = in.readInt();
+			entity.mTitle = in.readString();
+			entity.mContent = in.createStringArray();
 			return entity;
 		}
 

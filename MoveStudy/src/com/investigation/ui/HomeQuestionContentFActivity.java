@@ -5,16 +5,22 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ScrollView;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.FindCallback;
 import com.example.movestudy.R;
 import com.investigation.biz.Question;
 import com.investigation.config.Constants.Home;
-import com.investigation.utils.QuestionFactory;
+import com.investigation.entity.Questionnaire;
+import com.investigation.utils.ToastUtil;
 import com.investigation.view.HomeQuestionContentFragment;
 
 /**
@@ -66,24 +72,40 @@ public class HomeQuestionContentFActivity extends FragmentActivity implements
 
 	// 模拟数据
 	private void getData() {
-		Question question = QuestionFactory
-				.createQuestion(Home.question_content_type_radio);
-		question.setTitle("1:你的名字是？");
-		question.setData(new String[] { "张三", "李四", "王五", "呵呵", "嘻嘻" });
-		mQuestions.add(question);
-		Question question1 = QuestionFactory
-				.createQuestion(Home.question_content_type_checkbox);
-		question1.setTitle("2:你的名字是？");
-		question1.setData(new String[] { "张三", "李四", "王五", "呵呵", "嘻嘻" });
-		mQuestions.add(question1);
-		Question question2 = QuestionFactory
-				.createQuestion(Home.question_content_type_anwer);
-		question2.setTitle("3:请输入你的名字");
-		mQuestions.add(question2);
-		Question question3 = QuestionFactory
-				.createQuestion(Home.question_content_type_photo);
-		question3.setTitle("4:请留下你自拍");
-		mQuestions.add(question3);
+		// Question question = QuestionFactory
+		// .createQuestion(Home.question_content_type_radio);
+		// question.setTitle("1:你的名字是？");
+		// question.setData(new String[] { "张三", "李四", "王五", "呵呵", "嘻嘻" });
+		// mQuestions.add(question);
+		// Question question1 = QuestionFactory
+		// .createQuestion(Home.question_content_type_checkbox);
+		// question1.setTitle("2:你的名字是？");
+		// question1.setData(new String[] { "张三", "李四", "王五", "呵呵", "嘻嘻" });
+		// mQuestions.add(question1);
+		// Question question2 = QuestionFactory
+		// .createQuestion(Home.question_content_type_anwer);
+		// question2.setTitle("3:请输入你的名字");
+		// mQuestions.add(question2);
+		// Question question3 = QuestionFactory
+		// .createQuestion(Home.question_content_type_photo);
+		// question3.setTitle("4:请留下你自拍");
+		// mQuestions.add(question3);
+//		AVQuery<Questionnaire> avQuery = AVObject.getQuery(Questionnaire.class);
+//		avQuery.findInBackground(new FindCallback<Questionnaire>() {
+//
+//			@Override
+//			public void done(List<Questionnaire> list, AVException arg1) {
+//				if (arg1 == null) {
+//					ToastUtil.toast(getApplicationContext(), list.size() + "");
+//					for (Questionnaire questionnaire : list) {
+//						Log.i("tag", questionnaire.getQuestionnaireName());
+//					}
+//				} else {
+//					ToastUtil.toast(getApplicationContext(), "查询失败");
+//				}
+//			}
+//		});
+
 	}
 
 	@Override

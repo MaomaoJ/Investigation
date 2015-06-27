@@ -38,8 +38,6 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.avos.avoscloud.AVObject;
 import com.example.movestudy.R;
 import com.investigation.baseAdapter.TmlsBasePageAdapter;
 import com.investigation.biz.AShoppingDao;
@@ -51,14 +49,7 @@ import com.investigation.entity.AShoppingResponseEntity;
 import com.investigation.entity.AccountResponseEntity;
 import com.investigation.entity.CategorysEntity;
 import com.investigation.entity.HomeResponseEntity;
-import com.investigation.entity.Integration;
 import com.investigation.entity.NavigationModel;
-import com.investigation.entity.Option;
-import com.investigation.entity.Questionnaire;
-import com.investigation.entity.Solution4Questionnaire;
-import com.investigation.entity.Solution4Topic;
-import com.investigation.entity.Topic;
-import com.investigation.entity.User;
 import com.investigation.entity.base.BaseResponseData;
 import com.investigation.indicator.TitlePageIndicator;
 import com.investigation.slidingmenu.SlidingMenu;
@@ -142,7 +133,6 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initSlidingMenu();
-		initLeanCould();
 		setContentView(R.layout.above_slidingmenu);
 		initClass();
 		initControl();
@@ -152,22 +142,9 @@ public class Vote_MainActivity extends BaseSlidingFragmentActivity implements
 		initNav();
 	}
 
-	private void initLeanCould() {
-		AVOSCloud.initialize(this,
-				"4d1w9bpmg2kgvjvwe5t5r1525s4ab6mxi8m8ibabv7i32ldy",
-				"zoqyx2c9zu1uym4sls3e80oa2silbkb063arfx6w66yoopwp");
-		AVObject.registerSubclass(User.class);
-		AVObject.registerSubclass(Questionnaire.class);
-		AVObject.registerSubclass(Topic.class);
-		AVObject.registerSubclass(Option.class);
-		AVObject.registerSubclass(Solution4Questionnaire.class);
-		AVObject.registerSubclass(Solution4Topic.class);
-		AVObject.registerSubclass(Integration.class);
-	}
 
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
 
 	}
