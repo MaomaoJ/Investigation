@@ -1,5 +1,6 @@
 package com.investigation.baseAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import android.content.Context;
@@ -10,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.movestudy.R;
-import com.investigation.entity.QuestionItemEntity;
+import com.investigation.entity.Questionnaire;
 
 /**
  * author：qiuchunjia time：下午2:37:48 类描述：这个类是实现listView item的展示
@@ -19,10 +20,11 @@ import com.investigation.entity.QuestionItemEntity;
 
 public class QuestionItemAdapter extends BaseAdapter {
 	private Context mContext;
-	private List<QuestionItemEntity> mList;
+	private List<Questionnaire> mList;
 	LayoutInflater mInflater;
+	SimpleDateFormat from = new SimpleDateFormat("yyyy-MM-dd");
 
-	public QuestionItemAdapter(Context context, List<QuestionItemEntity> list) {
+	public QuestionItemAdapter(Context context, List<Questionnaire> list) {
 		this.mContext = context;
 		this.mList = list;
 		mInflater = LayoutInflater.from(mContext);
@@ -65,14 +67,15 @@ public class QuestionItemAdapter extends BaseAdapter {
 		} else {
 			holder = (Viewholder) convertView.getTag();
 		}
-		QuestionItemEntity entity = mList.get(position);
+		Questionnaire entity = mList.get(position);
 		// 设置holder
-		holder.question_title.setText(entity.getQuestion_title());
-		holder.question_date.setText(entity.getQuestion_date());
-		holder.question_aword.setText(entity.getQuestion_aword());
-		holder.question_deadline.setText(entity.getQuestion_deadline());
-		holder.question_Quota.setText(entity.getQuestion_Quota());
-		holder.question_limit.setText(entity.getQuestion_limit());
+		holder.question_title.setText(entity.getQuestionnaireName());
+		holder.question_date.setText("发表:"
+				+ from.format(entity.getEffectiveDate()));
+		holder.question_aword.setText("奖励：" + entity.getAward() + "積分");
+		holder.question_deadline.setText("截止:"
+				+ from.format(entity.getDeadline()));
+		holder.question_Quota.setText("限额：" + entity.getQuota() + "份");
 		return convertView;
 	}
 

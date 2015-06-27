@@ -24,7 +24,6 @@
     <string name="pyb_sysnotification">系统通知</string>
     <string name="pyb_about">关于我们</string>
     <string name="pyb_quit">退出登录</string>
-    
 
     <!-- 分销商侧边栏菜单 -->
     <string name="dis_menuHome">主页</string>
@@ -69,5 +68,13 @@
     <string name="fragment_accumulated_shopping_button_exchange">兑换奖品</string>
     <string name="fragment_accumulated_shopping_button_mymoney">我的兑换币</string>
     <string name="fragment_accumulated_shopping_button_mygoods">我的奖品</string>
+    <!-- xlist config -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="press_again_exit">再按一次退出</string>
 
 </resources>

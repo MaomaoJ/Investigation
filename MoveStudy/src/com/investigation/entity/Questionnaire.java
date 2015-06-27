@@ -2,6 +2,9 @@ package com.investigation.entity;
 
 import java.util.Date;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.avos.avoscloud.AVClassName;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVRelation;
@@ -17,7 +20,7 @@ public class Questionnaire extends AVObject {
 		put("questionnaireName", value);
 	}
 
-	public void setQuota(String value) {
+	public void setQuota(int value) {
 		put("quota", value);
 	}
 
@@ -29,7 +32,7 @@ public class Questionnaire extends AVObject {
 		put("deadline", value);
 	}
 
-	public void setAward(String value) {
+	public void setAward(int value) {
 		put("award", value);
 	}
 
@@ -50,8 +53,8 @@ public class Questionnaire extends AVObject {
 		return getString("questionnaireName");
 	}
 
-	public String getQuota() {
-		return getString("quota");
+	public int getQuota() {
+		return getInt("quota");
 	}
 
 	public Date getEffectiveDate() {
@@ -62,8 +65,8 @@ public class Questionnaire extends AVObject {
 		return getDate("deadline");
 	}
 
-	public String getAward() {
-		return getString("award");
+	public int getAward() {
+		return getInt("award");
 	}
 
 	public String getSummary() {

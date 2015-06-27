@@ -15,8 +15,6 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-
-
 import com.example.movestudy.R;
 import com.investigation.utils.LogUtil;
 import com.umeng.analytics.MobclickAgent;

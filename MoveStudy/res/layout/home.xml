@@ -1,63 +1,61 @@
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/NORMAL_BACKGROUND_COLOR3"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/main_title"
+        layout="@layout/above_title" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/NORMAL_BACKGROUND_COLOR3"
-        android:orientation="vertical"
-        >
+        android:layout_height="150dp" >
 
-        <include
-            android:id="@+id/main_title"
-            layout="@layout/above_title" />
-
-        <RelativeLayout
+        <com.investigation.widget.ViewFlow
+            android:id="@+id/home_viewflow"
             android:layout_width="match_parent"
-            android:layout_height="150dp" >
+            android:layout_height="match_parent" />
 
-            <com.investigation.widget.ViewFlow
-                android:id="@+id/home_viewflow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <com.investigation.widget.CircleFlowIndicator
-                android:id="@+id/home_viewflowindicator"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="#7f808080"
-                android:padding="10dip" />
-        </RelativeLayout>
-
-        <include layout="@layout/border" />
-
-        <RelativeLayout
+        <com.investigation.widget.CircleFlowIndicator
+            android:id="@+id/home_viewflowindicator"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@android:color/white" >
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#7f808080"
+            android:padding="10dip" />
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/home_iv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="问卷" />
+    <include layout="@layout/border" />
 
-            <TextView
-                android:id="@+id/home_iv_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/home_iv_title"
-                android:layout_alignBottom="@id/home_iv_title"
-                android:layout_alignParentRight="true"
-                android:text="更多" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white" >
 
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/home_iv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="问卷" />
 
-        <include layout="@layout/border" />
+        <TextView
+            android:id="@+id/home_iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/home_iv_title"
+            android:layout_alignBottom="@id/home_iv_title"
+            android:layout_alignParentRight="true"
+            android:text="更多" />
+    </RelativeLayout>
 
-       <ListView 
-           android:id="@+id/home_listview"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           ></ListView>
-    </LinearLayout>
+    <include layout="@layout/border" />
+
+    <com.investigation.widget.XListView
+        android:id="@+id/home_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.investigation.widget.XListView>
+
+</LinearLayout>
